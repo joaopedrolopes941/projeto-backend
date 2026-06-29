@@ -1,0 +1,20 @@
+O projeto consiste em uma API REST desenvolvida em Node.js com Express para o gerenciamento de uma loja de produtos de informática. A aplicação permite cadastrar usuários, realizar login com autenticação JWT, cadastrar produtos e consultar os produtos armazenados no banco de dados PostgreSQL.
+
+O projeto foi organizado em camadas para facilitar a manutenção e a organização do código:
+
+server.js: arquivo principal que inicia o servidor Express, configura os middlewares e registra as rotas.
+routes: define os endpoints da API, como /usuarios e /produtos, encaminhando as requisições para os controllers.
+controllers: contém a lógica da aplicação, realizando validações, processando os dados e executando consultas no banco de dados.
+models: responsável pela conexão com o banco PostgreSQL utilizando a biblioteca pg.
+banco.sql: contém os comandos SQL para criar as tabelas usuarios e produtos.
+
+Para aumentar a segurança, foi utilizado o bcrypt para criptografar as senhas dos usuários antes de armazená-las no banco de dados e o JWT (JSON Web Token) para gerar um token de autenticação durante o login. As informações sensíveis, como os dados de conexão com o banco e a chave do JWT, são armazenadas no arquivo .env, utilizando a biblioteca dotenv.
+
+Durante a Sprint Review foram implementados os seguintes requisitos funcionais:
+
+RF001: Cadastro de usuários.
+RF002: Login de usuários com geração de token JWT.
+RF003: Cadastro de produtos.
+RF004: Consulta dos produtos cadastrados.
+
+Todos os dados são persistidos no PostgreSQL, garantindo que permaneçam armazenados mesmo após o encerramento da aplicação. As funcionalidades foram testadas por meio do Postman, utilizando requisições HTTP e verificando os códigos de resposta adequados, como 200 OK e 201 Created.

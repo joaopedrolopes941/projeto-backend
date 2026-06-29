@@ -19,11 +19,13 @@ exports.cadastrar = async (req, res) => {
 
     } catch (erro) {
 
-        res.status(500).json({
-            erro: 'Erro ao cadastrar usuário'
-        });
+    console.log(erro);
 
-    }
+    res.status(500).json({
+        erro: erro.message
+    });
+
+}
 
 };
 
